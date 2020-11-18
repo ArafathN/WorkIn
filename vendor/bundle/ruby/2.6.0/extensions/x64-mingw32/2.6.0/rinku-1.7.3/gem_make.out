@@ -1,0 +1,18 @@
+current directory: C:/Projects/WorkIn/vendor/bundle/ruby/2.6.0/gems/rinku-1.7.3/ext/rinku
+C:/Ruby26-x64/bin/ruby.exe -I C:/Ruby26-x64/lib/ruby/site_ruby/2.6.0 -r ./siteconf20201104-22028-75o6jh.rb extconf.rb
+creating Makefile
+
+current directory: C:/Projects/WorkIn/vendor/bundle/ruby/2.6.0/gems/rinku-1.7.3/ext/rinku
+make "DESTDIR=" clean
+
+current directory: C:/Projects/WorkIn/vendor/bundle/ruby/2.6.0/gems/rinku-1.7.3/ext/rinku
+make "DESTDIR="
+generating rinku-x64-mingw32.def
+compiling autolink.c
+compiling buffer.c
+compiling rinku.c
+linking shared-object rinku.so
+
+current directory: C:/Projects/WorkIn/vendor/bundle/ruby/2.6.0/gems/rinku-1.7.3/ext/rinku
+make "DESTDIR=" install
+/usr/bin/install -c -m 0755 rinku.so ./.gem.20201104-22028-oarag3

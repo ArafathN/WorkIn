@@ -1,43 +1,18 @@
-<h2>To Do</h2>
 <p>
-<%= link_to 'New Task', new_task_path %>
+<%= link_to 'New Task', new_task_path, class:'btn btn-info btn-sm' %>
 </p>
 
-<table>
-<tr>
-    <th>Content</th>
-    <th>State</th>
-    <th colspan ="4"></th>
-</tr>
-
-<%= render @to_do %>
-
-</table>
-
-<h2>Doing</h2>
-
-
-<table>
-<tr>
-    <th>Content</th>
-    <th>State</th>
-    <thcolspan ="5"></th>
-</tr>
-
-<%= render @doing %>
-
-</table>
-
-<h2>Done</h2>
-
-
-<table>
-<tr>
-    <th>Content</th>
-    <th>State</th>
-    <th colspan ="4"></th>
-</tr>
-
-<%= render @done %>
-
-</table>
+<div class ='row'>
+	<div class="col-md-4">
+	  <h1 class = 'text-center'>TO DO</h1>
+	  <%= render @to_do %>
+	</div>
+	<div class="col-md-4">
+	  <h1 class = 'text-center'>DOING</h1>
+	  <%= render @doing %>
+	</div>
+	<div class="col-md-4">
+	  <h1 class = 'text-center'>DONE</h1>
+	  <%= render @done %>
+	</div>
+</div>

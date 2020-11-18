@@ -25,7 +25,7 @@ gem 'twitter-bootstrap-rails'
 gem 'font_awesome5_rails'
 gem 'simple_form'
 gem 'devise'
-
+gem 'auto_html', '~> 2.0'
 # Use Active Storage variant
 # gem 'image_processing', '~> 1.2'
 

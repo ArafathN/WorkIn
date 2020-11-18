@@ -1,4 +1,8 @@
 
+
+<div class="banner" style="background-image: linear-gradient(rgba(0,0,0,0),rgba(0,0,0,0)), url(https://cdn.pixabay.com/photo/2017/08/07/23/31/office-2609177_1280.jpg);">
+<div class="container">
+
 <%= simple_form_for(resource, as: resource_name, url: session_path(resource_name), html: { class:'form-signin'}) do |f| %>
 
   <h2 class="text-center">Log in</h2>
@@ -16,8 +20,14 @@
                 input_html: {class: 'form-control'} %>
 
 
-    <%= f.button :submit, "Log in", class: "btn btn-success btn-block" %>
+    <%= f.button :submit, "Log in", class: "btn btn-info btn-block" %>
 
 <% end %>
 
 <%= render "devise/shared/links" %>
+
+</div>
+
+
+</div>
+

@@ -1,68 +1,70 @@
 class TasksController < ApplicationController
-before_action :authenticate_user!
-before_action :set_tasks, only: [:edit, :update, :show, :destroy, :change]
-
-    def index
-        @to_do = current_user.tasks.where(state: 'to_do')
-        @doing = current_user.tasks.where(state: 'doing')
-        @done = current_user.tasks.where(state: 'done')
-    end
-
-def new
-    @task = Task.new
-end
-
-def show 
+    before_action :authenticate_user!
+    before_action :set_task, only:[:edit, :update, :show, :destroy, :change]
     
-end
-
-def edit
+        def index
+            @to_do = current_user.tasks.where(state:'to_do')
+            @doing = current_user.tasks.where(state:'doing')
+            @done = current_user.tasks.where(state:'done')
+        end
     
-end
-
-def create
-    @task = current_user.tasks.new(tasks_params)
-   if  @task.save
-    flash[:notice] = "Task was sucessfully created"
-
-    redirect_to task_path(@task)
-
-else 
-    render 'new'
-end
-end
-
-def update
+        def new
+            @task = Task.new
+        end
     
-    if @task.update(tasks_params)
-        flash[:notice] = "Task was sucessfully updated"
-        redirect_to task_path(@task)
-    else
-        render 'edit'
-    end
-end
-
-def destroy
+        def edit
+            
+        end
     
-    @task.destroy
-    flash[:notice] = "Task was sucessfully deleted"
-    redirect_to tasks_path
-end
-
-def change
-    @task.update_attributes(state: params[:state])
-    flash[:notice] = "Task status was succesfully updated"
-    redirect_to tasks_path
-end
-
-
-    def set_tasks
+    
+        def create
+            @task = current_user.tasks.new(tasks_params)
+            if @task.save
+            flash[:notice] = "Task was successfully created"
+            redirect_to task_path(@task)
+            else 
+                render 'new'
+            end
+        end
+    
+        def update
+            
+            if @task.update(tasks_params)
+                flash[:notice] = "Task was succesfully updated"
+                redirect_to task_path(@task)
+            else
+                render 'edit'
+            end
+        end 
+    
+    
+        def show
+            
+        end
+    
+        def destroy
+        
+        @task.destroy
+        flash[:notice] = " Task was succesfully deleted"
+        redirect_to tasks_path
+        end
+    
+        def change
+            @task.update_attributes(state: params[:state])
+            flash[:notice] = "Task status was succesfully changed"
+            redirect_to tasks_path
+        end
+    
+     private 
+    
+    def set_task
         @task = Task.find(params[:id])
     end
-
-    private
-    def tasks_params
-        params.require(:task).permit(:content, :state)
+    
+     def tasks_params
+         params.require(:task).permit(:content, :state)
+     end
+    
+    
     end
-
-end
+    
